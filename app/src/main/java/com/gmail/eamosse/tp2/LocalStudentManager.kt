@@ -48,7 +48,8 @@ class LocalStudentManager : StudentManager {
     }
 
     override fun boysOrGirls(sexe: String): List<Student> {
-        TODO("Not yet implemented")
+       require(sexe == "M" || sexe == "F") {"Sexe must be either 'M' or 'F'"}
+       return students.filter { it.sexe == sexe }
     }
 
     override fun onlyNames(): List<String> {
