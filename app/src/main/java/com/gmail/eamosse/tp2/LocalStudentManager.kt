@@ -61,7 +61,7 @@ class LocalStudentManager : StudentManager {
     }
 
     override fun reverse(): List<Student> {
-        TODO("Not yet implemented")
+        return students.reversed()
     }
 
     override fun clear() {
