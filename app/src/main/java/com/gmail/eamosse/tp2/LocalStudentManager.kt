@@ -36,7 +36,11 @@ class LocalStudentManager : StudentManager {
     }
 
     override fun sortAgeAscDesc(type: String): List<Student> {
-        TODO("Not yet implemented")
+        return when (type.lowercase()) {
+            "asc" -> students.sortedBy { it.age }
+            "desc" -> students.sortedByDescending { it.age }
+            else -> throw IllegalArgumentException("Type must be 'asc' or 'desc'")
+        }
     }
 
     override fun groupBySex(): Map<String, List<Student>> {
